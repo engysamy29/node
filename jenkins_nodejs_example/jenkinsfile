@@ -10,7 +10,7 @@ pipeline {
           }
        stage('push') {
             steps {
-              withCredentials([usernamePassword(credentialsId:docker,useernameVariable:USERNAME,passwordVariabel:PASSWORD)])
+              withCredentials([usernamePassword(credentialsId:docker,useernameVariable:"USERNAME",passwordVariabel:"PASSWORD")])
               {
                sh 'docker login --username $USERNAME --password $PASSWORD' 
                sh 'docker push engysamy/jenkinsnode:v1.0'
